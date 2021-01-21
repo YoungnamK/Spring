@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 스프링 설절파일  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=
+		"http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		<!--악기 bean 생성  -->
+		<bean id="guitar" class="play.instrument.Guitar"/>
+		<bean id="harmonica" class="play.instrument.Harmonica"/>
+		<bean id="piano" class="play.instrument.Piano"/>
+		
+		<!-- 김건모 1인 밴드 -->
+		<bean id="gunmo" class="play.instrument.OneManBand">
+			<property name="aaa">
+				<!--list 컬랙션은 순서를 따짐.  -->
+				<list>
+					<ref bean="harmonica"/>
+					<ref bean="guitar"/>
+					<ref bean="harmonica"/>
+					<ref bean="piano"/>
+				</list>
+			</property>
+		</bean>
+		
+		<!-- 변진섭 1인 밴드 -->
+		<bean id="jinsub" class="play.instrument.OneManBand">
+			<property name="aaa">
+				<!--set 컬랙션은 순서를 따짐.  -->
+				<set>
+					<ref bean="harmonica"/>
+					<ref bean="guitar"/>
+					<ref bean="harmonica"/>
+				</set>
+			</property>
+		</bean>
+		
+		<!--  -->
+		<bean id="hun" class="play.instrument.OneManBandMap">
+			<property name="ccc">
+				<map>
+					<entry key="가나다" value-ref="harmonica"></entry>
+					<entry key="라마바" value-ref="piano"></entry>
+				</map>
+			</property>
+		</bean>
+		
+		<bean id="yoon" class="play.instrument.OneManBandProp">
+			<property name="bbb">
+				<props>
+					<prop key="GUITAR">띵가띵가</prop>
+					<prop key="HARMONICA">퓔리리</prop>
+					<prop key="PIANO">도레미</prop>
+				</props>
+			</property>
+		</bean>
+</beans>

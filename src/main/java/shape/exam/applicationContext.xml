@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 스프링 설절파일  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=
+		"http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<bean id="kkk" class="shape.exam.CircleDao"/>
+		<bean id="ooo" class="shape.exam.RectangleDao"/>
+		
+		<bean id="circle" class="shape.exam.Circle">
+			<property name="shapeDao">
+				<ref bean="kkk"/>
+			</property>
+		</bean>
+		
+		<bean id="rect" class="shape.exam.Rectangle">
+			<property name="shapeDao">
+				<ref bean="ooo"/>
+			</property>
+		</bean>
+		
+</beans>

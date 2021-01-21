@@ -16,6 +16,7 @@ public class MainTest {
 //		Saram hong = new Saram(dog, "홍길동", cat);
 //		System.out.println(hong.toString());
 		
+		
 		String xmlfile = "mypkg/mypet/mypet.xml";
 		ApplicationContext context = new ClassPathXmlApplicationContext(xmlfile);
 //		System.out.println(context.toString());
